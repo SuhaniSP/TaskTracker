@@ -19,6 +19,7 @@ if st.button("Add Task"):
     if new_task:
         st.session_state.tasks.append({"name": new_task, "status": "To Do"})
          # rerun immediately to refresh columns
+        st.rerun()
 
 # Display tasks in columns
 col1, col2, col3 = st.columns(3)
@@ -49,3 +50,4 @@ for idx, status in enumerate(statuses):
                     t["status"] = new_status
                     break
              # immediately refresh UI
+            st.rerun()
